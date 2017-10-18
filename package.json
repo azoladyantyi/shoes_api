@@ -3,11 +3,27 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "dependencies": {},
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^3.0.0",
+    "express-session": "^1.15.6",
+    "flash-express": "^1.0.4",
+    "mongoose": "^4.12.3"
+  },
   "devDependencies": {},
   "scripts": {
     "test": "mocha"
   },
   "author": "Azola",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/azoladyantyi/shoes_api.git"
+  },
+  "bugs": {
+    "url": "https://github.com/azoladyantyi/shoes_api/issues"
+  },
+  "homepage": "https://github.com/azoladyantyi/shoes_api#readme"
 }
