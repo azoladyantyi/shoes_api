@@ -1,21 +1,25 @@
 const mongoose = require('mongoose');
 
-const mongoURL = process.env.MONGO_DB_URL || "mongodb://localhost/shoesApi";
+const mongoURL = process.env.MONGO_DB_URL || "mongodb://localhost/shoeApi";
 
 mongoose.connect(mongoURL, {
-  useMongoClient: true
-},function(error) {
+    useMongoClient: true
+}, function(error) {
 
 });
 
-module.exports = function () {
-  const shoeSchema = mongoose.Schema({
-    name: String
-  })
-  shoeSchema.index({name: 1}, {unique: true})
-  const shoeData = mongoose.model("shoeData", shoeSchema)
+module.exports = function() {
+    const apiSchema = mongoose.Schema({
+        color: String,
+        brand: String,
+        price: Number,
+        size: Number,
+        in_stock: Number
+    })
 
-  return {
-    shoeData
-  }
+    const apiData = mongoose.model("shoeApi", apiSchema)
+
+    return {
+        apiData
+    }
 }

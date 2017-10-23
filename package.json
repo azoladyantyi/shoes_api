@@ -1,7 +1,7 @@
 {
   "name": "shoes_api",
   "version": "1.0.0",
-  "description": "",
+  "description": "RESfull to doListApi",
   "main": "index.js",
   "dependencies": {
     "body-parser": "^1.18.2",
@@ -10,9 +10,12 @@
     "express-handlebars": "^3.0.0",
     "express-session": "^1.15.6",
     "flash-express": "^1.0.4",
+    "mongodb": "^2.2.33",
     "mongoose": "^4.12.3"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "nodemon": "^1.12.1"
+  },
   "scripts": {
     "test": "mocha"
   },
