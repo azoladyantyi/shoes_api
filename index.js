@@ -37,7 +37,9 @@ app.get('/api/shoes', function(req, res) {
         if (err) {
             console.log(err);
         } else {
-            res.json(results)
+          console.log(results);
+            res.json({data:results})
+
         }
     })
 
@@ -126,7 +128,7 @@ app.post('/api/shoes', function(req, res) {
             console.log(err);
         } else {
             res.json(results)
-            console.log(results);
+            // console.log(results);
         }
 
 
