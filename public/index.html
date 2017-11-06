@@ -2,9 +2,10 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.6/handlebars.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -30,6 +31,9 @@
                     <td>{{price}}</td>
                     <td>{{size}}</td>
                     <td>{{in_stock}}</td>
+                    <td>
+                        <button class="btn btn-info btn-lg"id="sold" onclick="sellShoes('{{_id}}')" value="{{_id}}">Buy</button>
+                    </td>
                 </tr>
                 {{/each}}
             </tbody>
@@ -83,7 +87,7 @@
                     <div class="">
 
                         <label for="color">Color:</label>
-                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="color" placeholder="type in the color">
+                        <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" id="new_color" placeholder="type in the color">
                     </div>
 
                     <br>
@@ -111,14 +115,17 @@
                     </div>
                 </div>
             </div>
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 
         </div>
     </div>
 
-
+    <div class="">
+        <button type="submit" class="btn btn-info btn-lg" id="filter">Filter</button>
+    </div>
 
 </body>
 <script src="main.js"></script>
-<script src="index.js"></script>
+<!-- <script src="index.js"></script> -->
 
 </html>
