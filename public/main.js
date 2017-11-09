@@ -39,6 +39,11 @@
           price: new_price.value,
           in_stock: new_stock.value
       }
+      new_brand.value = "";
+      new_size.value = "";
+      new_color.value = "";
+      new_price.value = "";
+      new_stock.value = "";
 
       $.ajax({
           type: "POST",
@@ -91,14 +96,14 @@
   })
 
   //function for update
-$('#displayTableStock').on('click', function(e){
-  var sold = e.target.value;
-  $.ajax({
-    type: "POST",
-    url: "/api/shoes/sold/" +sold,
-    dataType: 'json',
-    success: function(oders) {}
+  $('#displayTableStock').on('click', function(e) {
+      var sold = e.target.value;
+      $.ajax({
+          type: "POST",
+          url: "/api/shoes/sold/" + sold,
+          dataType: 'json',
+          success: function(oders) {}
+
+      })
 
   })
-
-})
