@@ -90,7 +90,17 @@ app.get('/api/shoes/brand/:brandname/size/:size', function(req, res) {
 })
 // POST route updated stock
 app.post('/api/shoes/sold/:id', function(req, res) {
-    var id = req.params.id;
+  var id = req.params.id;
+  models.apiData.findOne({
+      _id: id
+  }, function (err, results) {}).then(function (results) {
+    if(results.In_stock <= 1){
+    results.remove();
+       res.json({
+         results: 'wertyuiop'
+       });
+  }
+  else{
     models.apiData.findOneAndUpdate({
             _id: id
         },
@@ -109,7 +119,9 @@ app.post('/api/shoes/sold/:id', function(req, res) {
                 res.json(results);
             }
         })
+      }
 })
+});
 // POST  route to add a new shoe
 app.post('/api/shoes', function(req, res) {
     var Color = req.body.color;
