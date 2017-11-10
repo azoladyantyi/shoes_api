@@ -37,8 +37,10 @@ app.get('/api/shoes', function(req, res) {
         if (err) {
             console.log(err);
         } else {
-          console.log(results);
-            res.json({data:results})
+            console.log(results);
+            res.json({
+                data: results
+            })
 
         }
     })
@@ -90,17 +92,7 @@ app.get('/api/shoes/brand/:brandname/size/:size', function(req, res) {
 })
 // POST route updated stock
 app.post('/api/shoes/sold/:id', function(req, res) {
-  var id = req.params.id;
-  models.apiData.findOne({
-      _id: id
-  }, function (err, results) {}).then(function (results) {
-    if(results.In_stock <= 1){
-    results.remove();
-       res.json({
-         results: 'wertyuiop'
-       });
-  }
-  else{
+    var id = req.params.id;
     models.apiData.findOneAndUpdate({
             _id: id
         },
@@ -115,12 +107,15 @@ app.post('/api/shoes/sold/:id', function(req, res) {
         function(err, results) {
             if (err) {
                 console.log(err);
+            }
+
+            if (results.in_stock <= 1) {
+                results.remove()
             } else {
                 res.json(results);
             }
         })
-      }
-})
+
 });
 // POST  route to add a new shoe
 app.post('/api/shoes', function(req, res) {
